@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 // Backend address. Set VITE_API_URL in a .env file, or edit the fallback.
-const API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com//api").replace(/\/+$/, "")
+const API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com/api").replace(/\/+$/, "")
 
 // Route of your login page. Change it if yours is different.
 const LOGIN_PATH = "/Signup"
