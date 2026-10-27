@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 // Change this to your backend address. It reads VITE_API_URL if you set one.
-const API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com//api").replace(/\/+$/, "")
+const API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com/api").replace(/\/+$/, "")
 
 const CATEGORIES = [
     { value: 'men', label: 'Men' },
