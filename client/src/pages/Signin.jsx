@@ -7,7 +7,7 @@ const SHOW_DEBUG = true
 
 // Backend address. Your server prints "listening on port 4000", so that is the default.
 // To change it, create a .env file in the frontend root with: VITE_API_URL=http://localhost:4000/api
-const API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com//api").replace(/\/+$/, "")
+const API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com/api").replace(/\/+$/, "")
 
 // Where to go after a successful login. Change it if you want another page.
 const AFTER_LOGIN_PATH = "/"
