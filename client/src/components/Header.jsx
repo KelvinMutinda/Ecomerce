@@ -65,7 +65,7 @@ const Header = () => {
                 </ul>
 
                 {/* Right Side Bar */}
-                <div className="flex items-center gap-4 mt-2 md:mt-0">
+                <div className="flex flex-wrap items-center gap-4 mt-2 md:mt-0">
                     <Search />
                     <div className='flex items-center gap-4'>
                         <NavLink
@@ -90,6 +90,26 @@ const Header = () => {
                                 <img src="/Navbar/cart.png" alt="cart" className='w-6 h-6 hover:scale-110' />
                             </div>
                         </NavLink>
+                    </div>
+
+                    {/* Sign in / Sign up */}
+                    <div className='flex items-center gap-2'>
+                        <NavLink
+                            to="/signin"
+                            onClick={toggleMenu}
+                            className={({ isActive }) =>
+                                `px-3 py-1.5 rounded hover:bg-slate-100 transition-all duration-300 ${isActive ? 'font-extrabold' : ''}`
+                            }
+                        >
+                            Sign in
+                        </NavLink>
+                        <Link
+                            to="/signup"
+                            onClick={toggleMenu}
+                            className='px-3 py-1.5 rounded bg-gray-900 text-white hover:bg-gray-700 transition-all duration-300'
+                        >
+                            Sign up
+                        </Link>
                     </div>
                 </div>
             </div>

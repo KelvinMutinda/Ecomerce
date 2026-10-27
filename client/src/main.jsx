@@ -16,26 +16,29 @@ import { WishListProvider } from "./context/WishListContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./pages/Login.jsx";
 import SignUp from "./pages/SignUp.jsx";
+import Signin from "./pages/Signin.jsx";
+import PostProduct from "./pages/postProduct.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { path: '/', element: <Home /> },
-      { path: '/login', element: <Login /> },
+      { path: '/postProduct', element: <PostProduct /> },
       { path: '/signup', element: <SignUp /> },
+      { path: '/', element: <Home /> },
+      { path: '/signin', element: <Signin /> },
       { path: '/about-us', element: <About /> },
       { path: '/cart', element: <Cart /> },
       { path: '/wishlist', element: <WishList /> },
       { path: '/shoes/men', element: <Men /> },
       { path: '/shoes/women', element: <Women /> },
       { path: '/shoes/kids', element: <Kids /> },
+      { path: '/products/:id', element: <ProductPage /> },
       { path: '/product-details/:id', element: <ProductDetails /> },
       { path: '/search/:search', element: <SearchResults /> },
-
     ]
   },
 ]);
@@ -44,9 +47,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <WishListProvider>
       <CartProvider>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
+        <RouterProvider router={router} />
         <ToastContainer />
       </CartProvider>
     </WishListProvider>
