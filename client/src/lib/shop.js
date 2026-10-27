@@ -1,6 +1,6 @@
 // Backend address. Set VITE_API_URL in a .env file to change it.
-export const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:4000/api').replace(/\/+$/, '')
 
+export API_URL = (import.meta.env.VITE_API_URL || "https://ecomerce-m62g.onrender.com//api").replace(/\/+$/, "")
 // The same address without "/api". Uploaded images are served from here (e.g. http://localhost:4000/uploads/ab12.jpg)
 export const SERVER_URL = API_URL.replace(/\/api$/, '')
 
