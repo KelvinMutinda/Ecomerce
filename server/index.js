@@ -5,15 +5,12 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
-// path to your routes file (the one with /register, /login and /product). Adjust it to match your folders.
+
 const apiRoutes = require('./routes/auth')
 
 const app = express()
 
-/* ============================ CORS ============================
-   Any localhost port is allowed while developing (Vite can move between 5173, 5174...).
-   For a deployed frontend, set CLIENT_ORIGIN in .env / Render, e.g. https://my-shop.vercel.app
-   Several origins can be given, separated by commas. */
+
 const extraOrigins = (process.env.CLIENT_ORIGIN || '')
   .split(',')
   .map((o) => o.trim().replace(/\/+$/, ''))   // browsers never send a trailing slash
@@ -34,7 +31,6 @@ app.use(
 
 app.use(express.json())
 
-// uploaded product images -> http://localhost:4000/uploads/<file>
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // quick check that the server is alive
@@ -48,7 +44,7 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' })
 })
 
-// last stop for errors, so the client always gets JSON instead of an HTML error page
+
 app.use((err, req, res, next) => {   // eslint-disable-line no-unused-vars
   if (err.type === 'entity.parse.failed') {
     return res.status(400).json({ message: 'Invalid JSON in the request body.' })
